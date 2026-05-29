@@ -15,6 +15,8 @@
     <properties>
         <!-- overrides for properties defined in irs-spring-boot-starter-parent -->
         <config-folder.path>${project.basedir}/../config</config-folder.path>
+        <org-apache-tomcat-embed.tomcat-embed-core.version>10.1.55</org-apache-tomcat-embed.tomcat-embed-core.version>
+        <org-apache-tomcat-embed.tomcat-embed-websocket.version>10.1.55</org-apache-tomcat-embed.tomcat-embed-websocket.version>
     </properties>
     <dependencies>
         <dependency>
@@ -191,4 +193,18 @@
 
         </plugins>
     </build>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-core</artifactId>
+                <version>${org-apache-tomcat-embed.tomcat-embed-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-websocket</artifactId>
+                <version>${org-apache-tomcat-embed.tomcat-embed-websocket.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
