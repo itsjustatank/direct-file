@@ -22,6 +22,8 @@
         <spotbugs-maven-plugin.includeFilterFile>${project.basedir}/../../../config/spotbugs-include.xml</spotbugs-maven-plugin.includeFilterFile>
         <spotbugs-maven-plugin.excludeFilterFile>${project.basedir}/../../../config/spotbugs-exclude.xml</spotbugs-maven-plugin.excludeFilterFile>
         <maven-pmd-plugin.ruleset>${project.basedir}/../../../config/pmd-static-analysis-ruleset.xml</maven-pmd-plugin.ruleset>
+        <org-apache-tomcat-embed.tomcat-embed-core.version>10.1.55</org-apache-tomcat-embed.tomcat-embed-core.version>
+        <org-apache-tomcat-embed.tomcat-embed-websocket.version>10.1.55</org-apache-tomcat-embed.tomcat-embed-websocket.version>
     </properties>
     <dependencies>
         <!-- added for bean validation of @ConfigurationProperties using @Validated -->
@@ -77,4 +79,18 @@
             </plugin>
         </plugins>
     </build>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-core</artifactId>
+                <version>${org-apache-tomcat-embed.tomcat-embed-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-websocket</artifactId>
+                <version>${org-apache-tomcat-embed.tomcat-embed-websocket.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
